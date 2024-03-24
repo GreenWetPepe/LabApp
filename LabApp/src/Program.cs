@@ -17,7 +17,7 @@ namespace LabApp
             SQLDatabase.SetConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=docum_reg;");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new menu());
+            Application.Run(new Menu());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace LabApp
 {
-    partial class Form4
+    partial class Tasks
     {
         /// <summary>
         /// Required designer variable.

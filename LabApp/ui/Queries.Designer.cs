@@ -1,6 +1,6 @@
 ﻿namespace LabApp
 {
-    partial class Form5
+    partial class Queries
     {
         /// <summary>
         /// Required designer variable.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LabApp
 {
-    public partial class menu : Form
+    public partial class Menu : Form
     {
-        public menu()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace LabApp
         private void employeesButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 f1 = new Form1();
+            Workers f1 = new Workers();
             f1.ShowDialog();
             this.Close();
         }
@@ -28,7 +28,7 @@ namespace LabApp
         private void organizationsButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 f2 = new Form2();
+            Organizations f2 = new Organizations();
             f2.ShowDialog();
             this.Close();
         }
@@ -36,7 +36,7 @@ namespace LabApp
         private void documentationButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form3 f3 = new Form3();
+            Documents f3 = new Documents();
             f3.ShowDialog();
             this.Close();
         }
@@ -44,7 +44,7 @@ namespace LabApp
         private void tasksButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form4 f4 = new Form4();
+            Tasks f4 = new Tasks();
             f4.ShowDialog();
             this.Close();
         }
@@ -52,7 +52,7 @@ namespace LabApp
         private void consoleButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form5 f5 = new Form5();
+            Queries f5 = new Queries();
             f5.ShowDialog();
             this.Close();
         }

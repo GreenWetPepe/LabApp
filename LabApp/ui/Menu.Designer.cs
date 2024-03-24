@@ -1,6 +1,6 @@
 ﻿namespace LabApp
 {
-    partial class menu
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.

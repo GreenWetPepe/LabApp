@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace LabApp
 {
-    public partial class Form3 : Form
+    public partial class Tasks : Form
     {
-        public Form3()
+        public Tasks()
         {
             InitializeComponent();
             TableLV.View = View.Details;
@@ -21,21 +21,17 @@ namespace LabApp
             SQLDatabase.SetQueryHandler(OutDBQuery);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void task11Button_Click(object sender, EventArgs e)
         {
-            string dCode = (dCodeTB.Text == null) ? "NULL" : dCodeTB.Text;
-            string id = (idTB.Text == null) ? "NULL" : idTB.Text;
-            string registrationDate = (registrationDateTB.Text == null) ? "NULL" : registrationDateTB.Text;
-            string summary = (summaryTB.Text == null) ? "NULL" : summaryTB.Text;
-            string type = (typeTB.Text == null) ? "NULL" : typeTB.Text;
-            string organizationId = (organizationIdTB.Text == null) ? "NULL" : organizationIdTB.Text;
-            string employeeId = (employeeIdTB.Text == null) ? "NULL" : employeeIdTB.Text;
-            SQLDatabase.ExecuteCommand($"INSERT INTO documentation(d_code,id,registration_date,summary,type,organization_id,employee_id) VALUES ({dCode},{id},'{registrationDate}','{summary}','{type}',{organizationId},{employeeId});");
+            SQLDatabase.ExecuteCommand("CALL Task11");
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void task16Button_Click(object sender, EventArgs e)
         {
-            SQLDatabase.ExecuteCommand("SELECT * FROM documentation;");
+            SQLDatabase.ExecuteCommand($"CALL Task16('{dateTB.Text}')");
+        }
+        private void task26Button_Click(object sender, EventArgs e)
+        {
+            SQLDatabase.ExecuteCommand($"CALL Task41('{numTB.Text}');");
         }
 
         private void OutDBState(string message) => statusLabel.Text = message;
@@ -63,7 +59,7 @@ namespace LabApp
         private void menuButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menu m = new menu();
+            Menu m = new Menu();
             m.ShowDialog();
             this.Close();
         }

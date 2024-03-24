@@ -1,6 +1,6 @@
 ﻿namespace LabApp
 {
-    partial class Form1
+    partial class Workers
     {
         /// <summary>
         /// Обязательная переменная конструктора.

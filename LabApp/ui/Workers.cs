@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace LabApp
 {
-    public partial class Form5 : Form
+    public partial class Workers : Form
     {
-        public Form5()
+        public Workers()
         {
             InitializeComponent();
             TableLV.View = View.Details;
@@ -23,7 +23,13 @@ namespace LabApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SQLDatabase.ExecuteCommand(command.Text);
+            string id = (idTB.Text == null) ? "NULL": idTB.Text;
+            string lastName = (lastNameTB.Text == null) ? "NULL" : lastNameTB.Text;
+            string firstName = (firstNameTB.Text == null) ? "NULL" : firstNameTB.Text;
+            string patronymics = (patronymicsTB.Text == null) ? "NULL" : patronymicsTB.Text;
+            string jobTitle = (jobTitleTB.Text == null) ? "NULL" : jobTitleTB.Text;
+            string employmentDate = (employmentDateTB.Text == null) ? "NULL" : employmentDateTB.Text;
+            SQLDatabase.ExecuteCommand($"INSERT INTO employees(id,last_name,first_name,patronymic,job_title,employment_date) VALUES ({id},'{lastName}','{firstName}','{patronymics}','{jobTitle}','{employmentDate}');");
         }
 
         private void OutDBState(string message) => statusLabel.Text = message;
@@ -48,10 +54,15 @@ namespace LabApp
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SQLDatabase.ExecuteCommand("SELECT * FROM employees;");
+        }
+
         private void menuButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menu m = new menu();
+            Menu m = new Menu();
             m.ShowDialog();
             this.Close();
         }
